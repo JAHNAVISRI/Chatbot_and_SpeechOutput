@@ -21,3 +21,13 @@ To provide speech input, git clone the speech workspace and run
 python recognize_speech.py 
 
 Note: The prebuild convo required for our specific purpose is already trained. To re-train the models follow the guide 
+
+# To get Sound Output
+
+1) source venv/bin activate
+
+2) pip install watson-developer-cloud
+
+3) cd watson_ws/src
+
+4) python rostts.py
