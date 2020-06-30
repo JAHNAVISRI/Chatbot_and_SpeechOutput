@@ -1,35 +1,18 @@
-# Chatbot_and_SpeechOutput
+# tts-watson-ros
+Text to speech using watson for ros.
 
-# To Create the ChatBot
+## Requirements
 
-1) mkdir watson_ws/src
+- **Python 2.7**
+- **Pip**
+- Ros indigo (maybe can be used on new version of ros but this is not tested)
+- **portaudio**, can be installed with `brew install portaudio` (mac) or `apt-get install portaudio19-dev`(linux)
 
-2) clone this repository from GitHub to your src
+## Usage
 
-3) create the virtual environment in the name of venv
-
-4) source venv/bin/activate
-
-5) pip install aiml
-
-6) cd watson_ws/src/pyaiml
-
-7) python test.py (This file gives output for the input speech/text)
-
-To provide speech input, git clone the speech workspace and run
-
-python recognize_speech.py 
-
-Note: The prebuild convo required for our specific purpose is already trained. To re-train the models follow the guide 
-
-# To get Sound Output
-
-1) source venv/bin activate
-
-2) pip install watson-developer-cloud
-
-3) cd watson_ws/src
-
-4) python rostts.py
-
-Note: There is a word limit for usage of watson_ws. So the speech output can be replaved any other sound package.
+1. Clone the repo ìn your catkin workspace (most of the time it's `~/catkin_ws`) `src` folder: `git clone https://github.com/HomeHabbit/tts-watson-ros.git tts_watson`
+2. Do `catkin_make` under your catkin workspace
+3. Run `pip install -r requirements.txt` inside `tts_watson` folder
+4. Update the file `config.sample.yml` and rename it to `config.yml`
+5. Run it with ros: `rosrun tts_watson tts.py`
+6. You need to publish message on topic `/text_to_speech` (e.g with rostopic: `rostopic pub /text_to_speech std_msgs/String hi` will make you hear "hi")
