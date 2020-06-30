@@ -31,3 +31,5 @@ Note: The prebuild convo required for our specific purpose is already trained. T
 3) cd watson_ws/src
 
 4) python rostts.py
+
+Note: There is a word limit for usage of watson_ws. So the speech output can be replaved any other sound package.
